@@ -1,6 +1,7 @@
 module org.example.roomplanner {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jimObjModelImporterJFX;
 
 
     opens org.example.roomplanner.controller to javafx.fxml;

@@ -25,11 +25,15 @@
             <version>${javafx.version}</version>
         </dependency>
 
-            <dependency>
-                <groupId>org.fxyz3d</groupId>
-                <artifactId>fxyz3d-importers</artifactId>
-                <version>0.6</version>
-            </dependency>
+        <dependency>
+            <groupId>com.interactivemesh</groupId>
+            <artifactId>jfx3d-model-importer</artifactId>
+            <version>0.8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jimObjModelImporterJFX.jar</systemPath>
+        </dependency>
+
+
 
     </dependencies>
 

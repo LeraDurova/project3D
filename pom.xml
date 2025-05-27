@@ -24,6 +24,13 @@
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
+            <dependency>
+                <groupId>org.fxyz3d</groupId>
+                <artifactId>fxyz3d-importers</artifactId>
+                <version>0.6</version>
+            </dependency>
+
     </dependencies>
 
     <build>

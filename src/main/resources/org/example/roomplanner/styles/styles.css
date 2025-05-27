@@ -1,0 +1,80 @@
+/* src/main/resources/com/example/styles/styles.css */
+
+/* ---- фон всего окна ---- */
+.root {
+    -fx-background-color: white;
+}
+
+/* ---- сама карточка ---- */
+.main-card {
+    -fx-background-color: #E0F2FF;   /* светлый голубой */
+    -fx-background-radius: 20px;
+    -fx-padding: 40;
+    /* позволяем VBox тянуться, но с разумным максимумом */
+}
+
+/* ---- заголовок ---- */
+.app-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E5FAA;  /* тёмно-синий */
+}
+
+/* ---- кнопки ---- */
+.action-button {
+    -fx-background-color: #5B9DFE;   /* пастельный синий */
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-padding: 10 20 10 20;
+    -fx-graphic-text-gap: 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-min-width: 200px;    /* минимальная ширина */
+    -fx-max-width: 400px;    /* и максимальная */
+}
+
+/* hover / pressed */
+.action-button:hover {
+    -fx-background-color: #4A8CEC;
+}
+
+.action-button:pressed {
+    -fx-background-color: #3975C0;
+}
+
+/* внутри AnchorPane */
+#rootPane {
+    -fx-background-color: white;
+}
+
+/* Стили для подписи полей формы */
+.form-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E5FAA;   /* темно-синий оттенок, как в заголовке */
+}
+
+.sidebar {
+    -fx-background-color: #EAF6FF;
+    -fx-padding: 10;
+}
+.scroll-pane {
+    -fx-background: transparent;
+}
+.room-pane {
+    -fx-background-color: #F0F8FF;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+}
+.control-button {
+    -fx-background-color: #5B9DFE;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+}
+.control-button:hover { -fx-background-color: #4A8CEC; }
+.control-button:pressed { -fx-background-color: #3975C0; }

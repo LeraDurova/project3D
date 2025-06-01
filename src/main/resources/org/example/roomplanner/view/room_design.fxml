@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -12,41 +10,89 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.roomplanner.controller.RoomDesignController"
             stylesheets="@../styles/styles.css">
-    <BorderPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
-                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-        <!-- Левая панель категорий -->
-        <left>
-            <VBox styleClass="sidebar" spacing="10" alignment="TOP_CENTER" prefWidth="160">
-                <Button text="Спальня"   onAction="#onCategoryClicked" styleClass="action-button"/>
-                <Button text="Кухня"     onAction="#onCategoryClicked" styleClass="action-button"/>
-                <Button text="Ванная"    onAction="#onCategoryClicked" styleClass="action-button"/>
-                <Button text="Гостиная"  onAction="#onCategoryClicked" styleClass="action-button"/>
-            </VBox>
-        </left>
+    <children>
+        <BorderPane AnchorPane.topAnchor="0"
+                    AnchorPane.bottomAnchor="0"
+                    AnchorPane.leftAnchor="0"
+                    AnchorPane.rightAnchor="0">
 
-        <!-- Верхняя панель каталога мебели -->
-        <top>
-            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="120" styleClass="scroll-pane">
-                <FlowPane fx:id="furniturePane" hgap="15" vgap="15" prefWrapLength="600" style="-fx-padding:10;"/>
-            </ScrollPane>
-        </top>
+            <!-- Левая панель категорий -->
+            <left>
+                <VBox fx:id="categoryPane"
+                      styleClass="sidebar"
+                      spacing="10"
+                      alignment="TOP_CENTER"
+                      prefWidth="160">
+                    <children>
+                        <Button text="Спальня"
+                                onAction="#onCategoryClicked"
+                                styleClass="action-button category-button"/>
+                        <Button text="Кухня"
+                                onAction="#onCategoryClicked"
+                                styleClass="action-button category-button"/>
+                        <Button text="Ванная"
+                                onAction="#onCategoryClicked"
+                                styleClass="action-button category-button"/>
+                        <Button text="Гостиная"
+                                onAction="#onCategoryClicked"
+                                styleClass="action-button category-button"/>
+                    </children>
+                </VBox>
+            </left>
 
-        <!-- Центральная зона: 3D-окно -->
-        <center>
-            <AnchorPane fx:id="roomPane" styleClass="room-pane"/>
-        </center>
+            <!-- Верхняя панель: прокручиваемый каталог мебели -->
+            <top>
+                <ScrollPane fitToWidth="true"
+                            fitToHeight="true"
+                            prefHeight="120"
+                            styleClass="scroll-pane">
+                    <content>
+                        <FlowPane fx:id="furniturePane"
+                                  hgap="15"
+                                  vgap="15"
+                                  prefWrapLength="600"
+                                  style="-fx-padding:10;"/>
+                    </content>
+                </ScrollPane>
+            </top>
 
-        <!-- Нижняя панель кнопок управления 3D -->
-        <bottom>
-            <HBox spacing="15" alignment="CENTER" style="-fx-padding:10;">
-                <Button text="↑"    onAction="#onRotateUp"    styleClass="control-button"/>
-                <Button text="↓"    onAction="#onRotateDown"  styleClass="control-button"/>
-                <Button text="←"    onAction="#onRotateLeft"  styleClass="control-button"/>
-                <Button text="→"    onAction="#onRotateRight" styleClass="control-button"/>
-                <Button text="↻"    onAction="#onRotateAngle"  styleClass="control-button"/>
-                <Button text="＋"    onAction="#onZoomIn"      styleClass="control-button"/>
-                <Button text="－"    onAction="#onZoomOut"     styleClass="control-button"/>
-            </HBox>
-        </bottom>
-    </BorderPane>
+            <!-- Центр: окно для SubScene с 3D-комнатой -->
+            <center>
+                <AnchorPane fx:id="roomPane"
+                            styleClass="room-pane"/>
+            </center>
+
+            <!-- Нижняя панель: кнопки ручного управления камерой -->
+            <bottom>
+                <HBox spacing="15"
+                      alignment="CENTER"
+                      style="-fx-padding:10;">
+<!--                    <children>-->
+<!--                        <Button text="↑"-->
+<!--                                onAction="#onRotateUp"-->
+<!--                                styleClass="control-button"/>-->
+<!--                        <Button text="↓"-->
+<!--                                onAction="#onRotateDown"-->
+<!--                                styleClass="control-button"/>-->
+<!--                        <Button text="←"-->
+<!--                                onAction="#onRotateLeft"-->
+<!--                                styleClass="control-button"/>-->
+<!--                        <Button text="→"-->
+<!--                                onAction="#onRotateRight"-->
+<!--                                styleClass="control-button"/>-->
+<!--                        <Button text="↻"-->
+<!--                                onAction="#onRotateAngle"-->
+<!--                                styleClass="control-button"/>-->
+<!--                        <Button text="＋"-->
+<!--                                onAction="#onZoomIn"-->
+<!--                                styleClass="control-button"/>-->
+<!--                        <Button text="－"-->
+<!--                                onAction="#onZoomOut"-->
+<!--                                styleClass="control-button"/>-->
+<!--                    </children>-->
+                </HBox>
+            </bottom>
+
+        </BorderPane>
+    </children>
 </AnchorPane>
